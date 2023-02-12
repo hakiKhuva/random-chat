@@ -1,0 +1,158 @@
+:root {
+    --bg: #222;
+    --fg: #eee;
+    --disabled-bg: #444;
+    --disabled-fg: #ccc;
+    --font: 'Source Code Pro', monospace;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+* {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    border-color: var(--fg);
+    transition: 500ms all;
+}
+
+*:disabled,
+*:disabled + label {
+    background-color: var(--disabled-bg);
+    color: var(--disabled-fg);
+    border-color: var(--disabled-fg);
+}
+
+.app-cover .m-v {
+    margin: 8.5px 0px;
+}
+
+.app-cover #top-app {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--fg);
+    overflow: auto;
+}
+
+.app-cover #top-btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.app-cover button,
+.app-cover input[type="submit"],
+.app-cover .btn,
+.app-cover #message-form > input[type="button"] {
+    text-decoration: none;
+    /* display: block; */
+    word-break: keep-all;
+    word-wrap: normal;
+    padding: 15px 20px;
+    margin: 5px;
+    border: 2px solid var(--fg);
+    cursor: pointer;
+    font-size: 15.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.app-cover #current-status {
+    padding: 10px;
+    border: 2px solid var(--fg);
+    font-size: 15px;
+}
+
+.app-cover #message-container {
+    margin: 10px;
+    height: calc(100% - 274px);
+    top: 100px;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    padding: 25px;
+    border: 2px solid var(--fg);
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.app-cover #message-container > .msg {
+    margin: 8.5px 5px;
+    padding: 7.5px 2px;
+    max-width: calc(100% - 15px);
+    word-break: break-word;
+}
+
+.app-cover #message-container > .msg.recv {
+    align-self: flex-start;
+}
+
+.app-cover #message-container > .msg.sent {
+    align-self: flex-end;
+}
+
+.app-cover #message-container > .msg.status {
+    text-decoration: underline;
+    align-self: center;
+}
+
+.app-cover #message-container > .msg.file {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-cover #message-container > .msg.file .upper-head {
+    margin-bottom: 5px;
+}
+
+.app-cover #message-container > .msg.file > .inner-file {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-cover #message-container > .msg.file .name-size {
+    font-size: 15.5px;
+}
+
+.app-cover #message-container > .msg.file .type {
+    font-size: 14.5px;
+}
+.app-cover #message-container > .msg.file .file-dl-link {
+    font-size: 16px;
+    display: inline-block;
+    text-align: right;
+}
+
+.app-cover #app-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    padding: 10px;
+    border-top: 2px solid var(--fg);
+}
+
+.app-cover #message-form {
+    display: grid;
+    grid-template-columns: calc(100% - 200px) 100px 100px;
+}
+
+.app-cover #message-form > textarea {
+    padding: 12.5px;
+    font-size: 16.5px;
+    resize: none;
+    border: 2px solid var(--fg);
+}
+
+.app-cover #message-form > input[type="submit"],
+.app-cover #message-form > input[type="button"],
+.app-cover #message-form .btn {
+    margin: 0px;
+}

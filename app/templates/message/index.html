@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <title>Chat with stranger (without login)</title>
+</head>
+<body>
+    <div class="app-cover">
+        <div id="top-app">
+            <form action="#" class="btns m-v" id="top-btns">
+                <button id="connect-btn" type="button">Connect</button>
+                <button id="disconnect-btn" type="button" disabled>Disonnect</button>
+                <button id="dl-mode-btn" type="button">Dark/Light</button>
+                <div class="btn" style="cursor: default;">
+                    Live&nbsp;users&nbsp;:&nbsp;{{live_users_count}}
+                </div>
+                <a href="{{ url_for('Home.index') }}" class="btn">Back&nbsp;to&nbsp;Home</a>
+            </form>
+        </div>
+
+        <div id="message-container" class="m-v">
+            
+        </div>
+
+        <div id="app-bottom">
+            <form action="#" id="message-form" >
+                <textarea id="message-to-send" placeholder="Type your message here..." disabled autocomplete="off"></textarea>
+                <input type="file" name="message-attach-file" id="message-attach-file" hidden disabled>
+                <label class="btn" id="message-attach-btn" for="message-attach-file" style="display: flex; flex-direction: column; justify-content: center;align-items: center;">Attach</label>
+                <input type="submit" id="message-send-btn" value="Send" disabled>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1 class="main-header">Chat with stranger</h1>
+<form action="{{ url_for('Home.index') }}" method="post">
+    <div><span style="font-size:22px; margin: 15px 0px;display: block; font-weight: bold;">Enter your details or leave it blank and start messaging</span></div>
+
+    <div class="label">
+        <label for="m-name">Your name</label>
+        <input type="text" name="m-name" id="m-name" />
+    </div>
+
+    <div class="label">
+        <label for="m-age">Your age</label>
+        <select name="m-age" id="m-age">
+            <option value="unknown">Select age</option>
+            <option value="13-17">13 to 17</option>
+            <option value="18-30">18 to 30</option>
+            <option value="31-40">31 to 40</option>
+            <option value="41-50">41 to 50</option>
+            <option value="51+">51+</option>
+        </select>
+    </div>
+
+    <div class="label">
+        <label for="m-looking-age">Looking for age</label>
+        <select name="m-looking-age" id="m-looking-age">
+            <option value="unknown">Select age</option>
+            <option value="13-17">13 to 17</option>
+            <option value="18-30">18 to 30</option>
+            <option value="31-40">31 to 40</option>
+            <option value="41-50">41 to 50</option>
+            <option value="51+">51+</option>
+        </select>
+    </div>
+
+    <div class="label">
+        <label for="m-gender">Your Gender</label>
+        <select name="m-gender" id="m-gender">
+            <option value="unknown">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+
+    <div class="label">
+        <label for="m-looking-gender">I'm looking for</label>
+        <select name="m-looking-gender" id="m-looking-gender">
+            <option value="unknown">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+
+    <div class="label">
+        <small>By clicking below button you agree to our terms of using service</small>
+    </div>
+
+    <input type="submit" value="Start messaging" class="norm-btn">
+</form>
+{% endblock %}

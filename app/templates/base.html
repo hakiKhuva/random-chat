@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+
+<body>
+    <div class="app-cover" style="position: static;">
+        <div id="top-app" style="position: static;">
+            <div action="#" class="btns m-v" id="top-btns">
+                <a href="/" class="btn">{{app_name}}</a>
+                <a href="{{url_for('Message.index')}}" class="btn">Message</a>
+                <a href="{{url_for('Home.about')}}" class="btn">About</a>
+                <a href="{{url_for('Home.terms')}}" class="btn">Terms</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+</body>
+
+</html>
